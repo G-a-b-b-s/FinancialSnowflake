@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_financial_transactions
+    description: "Zintegrowane transakcje finansowe z segmentacją wartości transakcji"
+    columns:
+      - name: transaction_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+      - name: transaction_segment
+        tests:
+          - accepted_values:
+              values: ['high_value', 'normal']

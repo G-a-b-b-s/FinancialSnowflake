@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: financial
+    database: FINANCIAL
+    schema: RAW_TRANSACTIONS
+    tables:
+      - name: transactions
+        description: "Ręcznie załadowane transakcje z systemu finansowego"
+        columns:
+          - name: TRANSACTION_ID
+            tests:
+              - not_null
+              - unique
+          - name: CUSTOMER_ID
+            tests:
+              - not_null
+          - name: TRANSACTION_DATE
+            tests:
+              - not_null
+          - name: AMOUNT
+            tests:
+              - not_null
