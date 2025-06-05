@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: mart_customer_revenue
+    description: "Miesięczny przychód i liczba transakcji per klient"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: month
+        tests:
+          - not_null
+      - name: transactions_count
+        tests:
+          - not_null
+        
+      - name: total_revenue
+        tests:
+          - not_null
+          
+      - name: avg_transaction_amount
+        tests:
+          - not_null
+  - name: mart_product_performance
+    description: "Miesięczna analiza sprzedaży i przychodów według produktu"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+      - name: product_type
+        tests:
+          - not_null
+      - name: month
+        tests:
+          - not_null
+      - name: transactions_count
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
