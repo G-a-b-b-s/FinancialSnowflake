@@ -1,0 +1,31 @@
+name: 'financial_project'
+version: '1.0.0'
+
+config-version: 2
+
+profile: 'default'
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"  
+clean-targets:         
+  - "target"
+  - "dbt_packages"
+
+
+models:
+  financial_project:
+    staging:
+      +schema: staging 
+      +materialized: view
+    integration:
+      +schema: integration
+      +materialized: table
+    marts:
+      +schema: marts
+      +materialized: table
+
